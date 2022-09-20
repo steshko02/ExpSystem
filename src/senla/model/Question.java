@@ -15,10 +15,12 @@ public class Question extends Node{
     }
 
     public Integer getGeneralizationForLeftObj(){
-        return generalization--;
+        int next = (int) (generalization*0.5+generalization/100*5);
+        return next;
     }
     public Integer getGeneralizationForRightObj(){
-        return generalization++;
+        int next = (int) (generalization*1.5-generalization/100*5);
+        return next;
     }
     public Boolean getLastQuestion() {
         return lastQuestion;
@@ -42,6 +44,7 @@ public class Question extends Node{
     }
 
     public Question(String context, Integer generalization, Boolean lastQuestion) {
+        super(generalization);
         this.context = context;
         this.generalization = generalization;
         this.lastQuestion = lastQuestion;
@@ -55,6 +58,7 @@ public class Question extends Node{
     }
 
     public void setGeneralization(Integer generalization) {
+        this.setValue(generalization);
         this.generalization = generalization;
     }
 

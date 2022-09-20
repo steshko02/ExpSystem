@@ -15,28 +15,47 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Question question1 = QuestionFactory.getSimpleQuestion("это живое?",200);
-        Question question3 = QuestionFactory.getSimpleQuestion("это растение?",100);
-        Question question2 = QuestionFactory.getSimpleQuestion("это чел?",300);
+        Question question1 = QuestionFactory.getSimpleQuestion("это живое?",1000);
+        Question question3 = QuestionFactory.getSimpleQuestion("это растение?");
+        Question question2 = QuestionFactory.getSimpleQuestion("это чел?");
 
-        Question question5 = QuestionFactory.getSimpleQuestion("это дерево?", 140);
-        Question question4 = QuestionFactory.getSimpleQuestion("это цветок?",120);
+        Question question5 = QuestionFactory.getSimpleQuestion("это дерево?");
+        Question question4 = QuestionFactory.getSimpleQuestion("это цветок?");
 
 
-        Question question7 = QuestionFactory.getSimpleQuestion("это девушка?", 350);
+        Question question7 = QuestionFactory.getSimpleQuestion("это девушка?");
 
-        Question question6 = QuestionFactory.getSimpleQuestion("это животное?", 250);
+        Question question6 = QuestionFactory.getSimpleQuestion("это животное?");
 
-        Question question9 = QuestionFactory.getSimpleQuestion("это насекомое?", 220);
-        Question question8 = QuestionFactory.getSimpleQuestion("это птица?", 270);
-        Question question10 = QuestionFactory.getFinalQuestion("это голубь?", 285);
-        Question question11 = QuestionFactory.getSimpleQuestion("оно маленькое?", 210);
+        Question question9 = QuestionFactory.getSimpleQuestion("это насекомое?");
+        Question question8 = QuestionFactory.getSimpleQuestion("это птица?");
+        Question question10 = QuestionFactory.getFinalQuestion("это голубь?");
+        Question question11 = QuestionFactory.getSimpleQuestion("оно маленькое?");
 
 
 
         BinaryTreeV2 binaryTree = new BinaryTreeV2();
-        question1.createLeftNode(question3).createRightNode(question2);
-        question3.createLeftNode(question5).createRightNode(question4);
+        question1
+                .createLeftNode(question3)
+                .createRightNode(question2);
+
+        question3
+                .createLeftNode(question5)
+                .createRightNode(question4);
+
+        question2
+                .createLeftNode(question6)
+                .createRightNode(question7);
+        question6
+                .createLeftNode(question9)
+                .createRightNode(question8);
+        question8
+                .createLeftNode(question11)
+                .createRightNode(question10);
+
+
+
+
 //        question2.createLeftNode()
         binaryTree.insertNode(question1);
 //придумать алгоритм генерации нормального приоритета
